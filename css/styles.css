@@ -109,5 +109,9 @@ text-align: center;
 color: #ffffff8e;
 padding-top: 1%;
 }
+section#images{
+display: flex;
+
+}
 
 
