@@ -10,7 +10,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* overflow-y: hidden; desaparecer barra de scroll*/
+    overflow-y: hidden;/*  desaparecer barra de scroll*/
+    
 
  }
  header{
@@ -94,7 +95,7 @@ section#barra>nav.barra{
   
 }
 div.frase{
-  padding-top:3% ;
+  padding-top:1.5% ;
   display: flex;
   justify-content:center;
   color: #ffffff;
@@ -110,7 +111,44 @@ color: #ffffff8e;
 padding-top: 1%;
 }
 section#images{
+  padding-top: 1%;
 display: flex;
+justify-content:space-between  ;
+padding-left: 5%;
+padding-right: 5%;
+}
+
+section#images>div.img1>img{
+  
+  height: 325px;
+  border-radius: 36%;
+  transform: rotateZ(-10deg);
+  padding-top:  40% ;
+}
+section#images>div.img2>img{
+  height: 325px;
+  border-radius: 36%;
+  transform: rotateZ(-5deg);
+  padding-top: 10%;
+
+}
+section#images>div.img3>img{
+  height: 325px;
+  border-radius: 30%;
+
+}
+section#images>div.img4>img{
+  height: 325px;
+  border-radius: 36%;
+  padding-top: 10%;
+  transform: rotateZ(5deg);
+
+}
+section#images>div.img5>img{
+  height: 325px;
+  border-radius: 36%;
+  padding-top:  40% ;
+  transform: rotateZ(10deg);
 
 }
 
