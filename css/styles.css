@@ -11,6 +11,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     overflow-y: hidden;/*  desaparecer barra de scroll*/
+    overflow-x: hidden;
     
 
  }
@@ -118,34 +119,36 @@ padding-left: 5%;
 padding-right: 5%;
 }
 
+
 section#images>div.img1>img{
   
-  height: 325px;
+  height: 400px;
   border-radius: 36%;
   transform: rotateZ(-10deg);
   padding-top:  40% ;
 }
 section#images>div.img2>img{
-  height: 325px;
+  height: 400px;
   border-radius: 36%;
   transform: rotateZ(-5deg);
   padding-top: 10%;
 
 }
 section#images>div.img3>img{
-  height: 325px;
+  height: 400px;
   border-radius: 30%;
+  
 
 }
 section#images>div.img4>img{
-  height: 325px;
+  height: 400px;
   border-radius: 36%;
   padding-top: 10%;
   transform: rotateZ(5deg);
 
 }
 section#images>div.img5>img{
-  height: 325px;
+  height: 400px;
   border-radius: 36%;
   padding-top:  40% ;
   transform: rotateZ(10deg);
