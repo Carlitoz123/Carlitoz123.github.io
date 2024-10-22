@@ -11,7 +11,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     overflow-y: hidden;/*  desaparecer barra de scroll*/
-    overflow-x: hidden;
+    overflow-x: hidden;/*  desaparecer barra de scroll*/ 
     
 
  }
@@ -152,6 +152,18 @@ section#images>div.img5>img{
   border-radius: 36%;
   padding-top:  40% ;
   transform: rotateZ(10deg);
+
+}
+
+div.arrowrigth{
+position: absolute;
+border-radius: 100%;
+}
+section#images>div.arrowleft{
+  height:300px ;
+  width:300px ;
+  border-radius: 100%;
+position:absolute;
 
 }
 
