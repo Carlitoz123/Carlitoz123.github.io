@@ -92,7 +92,7 @@ section#barra{
 section#barra>nav.barra{
   border: 1px solid rgb(250, 250, 250);
   border-radius: 27px;
-  padding: 15px;
+  padding: 20px;
   
 }
 div.frase{
@@ -156,23 +156,43 @@ section#images>div.img5>img{
 }
 
 div.arrowrigth{
+  justify-content: center;
   color: #f1f1f1;
   height:50px ;
   width:50px ;
   padding: 15px;
 position: absolute;
 border-radius: 100%;
-left:80%;
+left:78%;
+top: 580px;
+background-color: #909090ab;
 }
+div.arrowrigth:hover{
+  background-color: #4b4b4b;
+  color: #f4f4f46d;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+
 section#images>div.arrowleft{
+  display: flex;
+  justify-content: center;
   color: #f1f1f1;
   height:50px ;
   width:50px ;
   padding: 15px;
   border-radius: 100%;
 position:absolute;
-left:20%;
-top: 30%;
+left:18%;
+top: 580px;
+background-color: #909090ab;
+}
+section#images>div.arrowleft:hover{
+ background-color: #4b4b4b;
+    color: #f4f4f46d;
+    border-radius: 100%;
+    cursor: pointer;
 }
 
 
