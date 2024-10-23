@@ -71,7 +71,7 @@ header>div>a>button{
     border-radius: 15px;
     transition: 0.3s ease-in all;
 }
-header>div>button:hover{
+header>div>a>button:hover{
     background-color: #333;
     color: #f4f4f46d;
     border-radius: 7px;

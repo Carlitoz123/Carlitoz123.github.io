@@ -78,7 +78,7 @@ margin-right: 3px;
 .recordar a:hover{
     text-decoration: underline;
 }
-.wrapper .btnlogin{
+.wrapper a .btnlogin{
     width:100% ;
     height:45px ;
     background: #fff;
