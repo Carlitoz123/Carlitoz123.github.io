@@ -17,23 +17,30 @@
                 <i class="fa-regular fa-user"></i>
             </div>
             <div class="user">
+                <input type="text" placeholder="Correo" required>
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="user">
                 <input type="password" placeholder="Password" required>
                 <i class="fa-solid fa-lock"></i>
             </div>
-                <div class="recordar">
-                    <label> <input type="checkbox">Remember me</label>
-                    <a href="#">Forgot password?</a>
-                </div>
+            <div class="user">
+                <input type="password" placeholder="Confirm Password" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            
+                
                 <!-- no me queda este boton de enlace -->
-               <div class="btn"><a href="/index.html"><button type="submit" class="btnlogin">Login</button></a> </div>
+               <div class="btn"><button type="submit" class="btnregister" onclick="changeIndex()" >Register</button></div>
 
                 <div class="register">
-                    <p>Don't have an account?<a href="#">Register</a></p>
+                    <p>Do you have an account??<a href="#" onclick="changelogin()">Log in</a></p>
                     
                 </div>
         </form>
 
     </div>
+    <script src="/js/script.js"></script>
     
 </body>
 </html>

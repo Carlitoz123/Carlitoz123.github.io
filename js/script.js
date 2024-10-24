@@ -4,3 +4,7 @@ function changelogin(){
 function changeIndex(){
     window.location.href='/index.html'
 }
+function changeRegister(){
+    window.location.href='/register/register.html'
+}
+
