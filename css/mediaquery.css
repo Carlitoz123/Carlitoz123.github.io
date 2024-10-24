@@ -2,6 +2,9 @@
 
 }
 @media (max-width: 425px){
+    *{
+        height:auto;
+    }
     div.login{
         display: flex;
         padding-left: 8px;
