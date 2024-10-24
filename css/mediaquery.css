@@ -42,11 +42,19 @@
     }
     /* deslizar imagenes para que no abarque de mas */
     section#images{
-        justify-items: center;
+        display: flex;
+       
+        
         overflow-y: hidden;
     }
+    section#images div.arrowleft{
+        display: none;
+    }
+    section#images div.arrowrigth{
+        display: none;
+    }
     div.logo{
-        height:100%;
+        height:90%;
         width: 100%;
         padding-bottom: 10px;
     }
