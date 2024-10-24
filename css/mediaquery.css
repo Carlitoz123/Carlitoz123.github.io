@@ -1,0 +1,54 @@
+@media (max-width: 768px){
+
+}
+@media (max-width: 425px){
+    div.login{
+        display: flex;
+        padding-left: 8px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        justify-items: center;
+        
+
+    }
+    header{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-left: 20px;
+        justify-content: space-between;
+    }
+    header  nav ul li{
+        display: none;
+        
+    }
+    div.frase{
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 14.5px;
+    }
+    /* acomodamos linea new winter */
+    section#barra nav.barra{
+        font-size: 14.5px;
+    }
+    .wrapper{
+       margin: 10px ;
+    }
+    /* ocultar logo */
+    header.logo{  
+        display: none;
+        background-size: cover;
+    background-position: center;
+    
+    }
+    /* deslizar imagenes para que no abarque de mas */
+    section#images{
+        justify-items: center;
+        overflow-y: hidden;
+    }
+    div.logo{
+        height:100%;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    
+}   
