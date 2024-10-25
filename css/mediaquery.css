@@ -141,8 +141,8 @@
     /* deslizar imagenes para que no abarque de mas */
     section#images{
         display: flex;
-       
-        padding-top: 10px;
+       justify-items: center;
+        padding-top: 150px;
         overflow-y: hidden;
     }
     section#images div.arrowleft{
