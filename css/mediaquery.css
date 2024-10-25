@@ -100,6 +100,7 @@
         padding-left: 8px;
         padding-bottom: 5px;
         padding-top: 5px;
+       
         justify-items: center;
         
 
@@ -109,6 +110,7 @@
         overflow-y: hidden;
         padding-left: 20px;
         justify-content: space-between;
+        padding-right: 20px;
     }
     header  nav ul li{
         display: none;
@@ -131,13 +133,16 @@
         display: none;
         background-size: cover;
     background-position: center;
+    height: 400%;
+    width: 300%;
+
     
     }
     /* deslizar imagenes para que no abarque de mas */
     section#images{
         display: flex;
        
-        
+        padding-top: 10px;
         overflow-y: hidden;
     }
     section#images div.arrowleft{
@@ -147,9 +152,9 @@
         display: none;
     }
     div.logo{
-        height:90%;
-        width: 100%;
-        padding-bottom: 10px;
+        height:40px;
+        width: 200px;
+        /* padding-bottom: 10px; */
     }
     
 }   
