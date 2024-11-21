@@ -39,3 +39,5 @@ const ctx1 = document.getElementById('chartCategorias');
       }
     }
   });
+
+ 

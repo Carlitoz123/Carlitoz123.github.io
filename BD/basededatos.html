@@ -11,13 +11,9 @@
 <div class="d-flex">
     <!--SIDEBAR-->
     <aside class="bg-dark text-white vh-100" style="width: 20%;">
-            <h2 class="p-4 h4">
-            <img width="50px" src="" alt="" class="mx-1">
-            Dietas
-          </h2>
           <ul class="nav flex-column">
-            <li class="nav-item mx-3"><a href="./index.html" class="nav-link text-white"><i class="bi bi-house"></i>&nbsp;&nbsp;Inicio</a></li>
-            <li class="nav-item mx-3"><a href="./dietas.html" class="nav-link text-white"><i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Dietas</a></li>
+            <li class="nav-item mx-3"><a href="basededatos.html" class="nav-link text-white"><i class="bi bi-house"></i>&nbsp;&nbsp;Inicio</a></li>
+            <li class="nav-item mx-3"><a href="products.html" class="nav-link text-white"><i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Products</a></li>
             <li class="nav-item mx-3"><a href="./users.html" class="nav-link text-white"><i class="bi bi-person"></i>&nbsp;&nbsp;Usuarios</a></li>
           </ul>
     </aside>
@@ -27,7 +23,7 @@
         <header>
         <nav class="px-4 py-4 navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Dashboard</a>
+              <a class="navbar-brand" href="#"><!--titulo de pantalla--></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,7 +43,7 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Lorem
+                      Admin
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Perfil</a></li>
@@ -62,59 +58,10 @@
         </header>
         <!--END HEADER-->
         <!--ROW STATS-->
-        <div class="row mx-4 px-4 my-4">
-          <div class="col-3">
-            <div class="card">
-              <div class="card-body">
-                <h6><i class="bi bi-wallet2"></i>&nbsp;INGRESOS MENSUALES</h6>
-                <hg class="h3">$30,000.00</hg>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <div class="card-body">
-                <h6>&nbsp;<i class="bi bi-people"></i>TOTAL CLIENTES</h6>
-                <hg class="h3">53</hg>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <div class="card-body">
-                <h6>&nbsp;<i class="bi bi-egg"></i>TOTAL DIETAS</h6>
-                <hg class="h3">64</hg>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="card">
-              <div class="card-body">
-                <h6>&nbsp;<i class="bi bi-credit-card-2-front"></i>DEUDORES</h6>
-                <hg class="h3">$2000.00</hg>
-              </div>
-            </div>
-          </div>
-        </div>
+       
         <!--END ROW STATS-->
         <!--CHARTS-->
-        <div class="row mx-4 px-4 my-4">
-          <div class="col-6"> 
-            <div class="card">
-              <div class="card-header">INGRESOS MENSUALES</div>
-              <div class="card-body">
-                <canvas id="chartIngresos"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card">
-              <div class="card-header">DIETAS POR CATEGORIA</div>
-              <div class="card-body">
-                <canvas id="chartCategorias"></canvas>
-              </div>
-          </div>
-        </div>
+       
         <!--END CHARTS-->
       </main>
 </div>
