@@ -4,6 +4,9 @@ function changelogin(){
 function changeIndex(){
     window.location.href='/BD/basededatos.html'
 }
+function changeIndex5(){
+    window.location.href='/index.html'
+}
 function changeRegister(){
     window.location.href='/register/register.html'
 }
