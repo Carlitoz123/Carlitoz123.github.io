@@ -13,6 +13,7 @@ body{
     overflow-y: hidden;/*  desaparecer barra de scroll*/
     overflow-x: hidden;/*  desaparecer barra de scroll*/ 
     
+    
 
  }
  header{
@@ -34,7 +35,7 @@ div.logo > img{
   width:100% ; 
   height:80% ;
     
-}
+  }
 header > nav > ul{
   display: flex;
   padding-top: 20px;
@@ -76,6 +77,8 @@ header>div>a>button:hover{
     color: #f4f4f46d;
     border-radius: 7px;
     cursor: pointer;
+
+    
 
 }
 button.signup{
