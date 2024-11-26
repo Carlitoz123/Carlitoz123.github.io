@@ -202,4 +202,8 @@ section#images>div.arrowleft:hover{
     cursor: pointer;
 }
 
+#barra{
+  background-color: rgb(0, 0, 0);
+}
+
 
