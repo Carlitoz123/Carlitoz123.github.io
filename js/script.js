@@ -2,7 +2,7 @@ function changelogin(){
     window.location.href='/login/login.html'
 }
 function changeIndex(){
-    window.location.href='/BD/basededatos.html'
+    window.location.href='/BD/products.html'
 }
 function changeIndex5(){
     window.location.href='/index.html'

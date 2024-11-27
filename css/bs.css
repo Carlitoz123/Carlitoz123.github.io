@@ -7,9 +7,66 @@ body{
     background-position: center;
     overflow-y: hidden;/*  desaparecer barra de scroll*/
     overflow-x: hidden;/*  desaparecer barra de scroll*/ }
+    
 
     header{
-        background-color: brown;
-
+        background-color:transparent ;
+        display:flex;
+        padding-left:75%;
+       
+    }
+    header>nav>div{
+        background-color:transparent ; 
+    }
+    section{
+        background-color: transparent;
+        display:flex;
+        
+    }
+    section>table.table>thead>tr>th{
+        background-color: transparent;
+       
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        
 
     }
+    section>table.table>tbody>tr>td{
+        background-color: transparent;
+       
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    div.pedidos>h1{
+        color: rgb(255, 255, 255);
+    }
+    div#gastos>div>div>div>h6{
+        background-color: transparent;
+       
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    div.card{
+        background-color: transparent;
+       
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        border: 2px solid #ffffff;
+    }
+    div>h1{
+        padding-left: 30px;
+    }
+    div>div#btn_user{
+        padding-left: 35px;
+        color: #ffffff;
+        background-color: transparent;
+    }
+    div>div#btn_user>button{
+
+        background-color: transparent;
+        border: 2px solid #ffffff;
+    }
+
+
+    
+    
