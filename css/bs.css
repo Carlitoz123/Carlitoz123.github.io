@@ -15,8 +15,31 @@ body{
         padding-left:75%;
        
     }
-    header>nav>div{
-        background-color:transparent ; 
+    .navbar {
+        background-color:transparent;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        border: 2px solid #ffffff;
+        border-radius: 5px; 
+        color: #ffffff;
+        
+    }
+    .dropdown-menu {
+        background-color:transparent;   
+        backdrop-filter: blur(5px); /* Efecto de desenfoque detrás del menú */
+       
+        box-shadow: none; /* Opcional: elimina la sombra */
+    }
+    
+    .dropdown-item {
+        color: #ffffff; 
+    }
+    .notif{
+        background-color: transparent;
+        display: flex;
+    }
+    
+    .dropdown-item:hover {
+        background-color: rgba(0, 0, 0, 0.1); 
     }
     section{
         background-color: transparent;
@@ -65,6 +88,12 @@ body{
 
         background-color: transparent;
         border: 2px solid #ffffff;
+    }
+
+    aside{
+        background-color: transparent;
+        border: 2px solid #ffffff;
+
     }
 
 
