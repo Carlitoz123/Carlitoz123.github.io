@@ -1,0 +1,15 @@
+body{
+    height:100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('./img/fondo.webp');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: hidden;/*  desaparecer barra de scroll*/
+    overflow-x: hidden;/*  desaparecer barra de scroll*/ }
+
+    header{
+        background-color: brown;
+
+
+    }

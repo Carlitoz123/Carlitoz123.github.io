@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bs.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Dashboard</title>
@@ -20,9 +21,11 @@
             <li class="nav-item mx-3"><a href="basededatos.html" class="nav-link text-white" style="font-size: 2rem;"><i class="bi bi-coin">
             </i>&nbsp;&nbsp;Ventas</a></li>
             <li class="nav-item mx-3"><a href="products.html" class="nav-link text-white" style="font-size: 2rem;">
-              <i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Productos</a></li>
+              <i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Inventario</a></li>
             <li class="nav-item mx-3"><a href="./users.html" class="nav-link text-white" style="font-size: 2rem;">
               <i class="bi bi-person"></i>&nbsp;&nbsp;Usuarios</a></li>
+              <li class="nav-item mx-3"><a href="./pedidos.html" class="nav-link text-white" style="font-size: 2rem;">
+                <i class="bi bi-person"></i>&nbsp;&nbsp;Pedidos</a></li>
           </ul>
     </aside>
     <!--END SIDEBAR-->
@@ -65,9 +68,42 @@
           </nav>
         </header>
         <!--END HEADER-->
-        <!--ROW STATS-->
-       
-        <!--END ROW STATS-->
+            <!--ROW STATS-->
+            <div class="row mx-4 px-4 my-4">
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h6><i class="bi bi-wallet2"></i>&nbsp;INGRESOS MENSUALES</h6>
+                    <hg class="h3">$30,000.00</hg>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h6>&nbsp;<i class="bi bi-people"></i>TOTAL CLIENTES</h6>
+                    <hg class="h3">53</hg>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h6>&nbsp;<i class="bi bi-egg"></i>TOTAL PRODUCTOS VENDIDOS</h6>
+                    <hg class="h3">64</hg>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h6><i class="bi bi-wallet2"></i>&nbsp;INGRESOS ANUALES</h6>
+                    <hg class="h3">$854,000.00</hg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END ROW STATS-->
         <!--CHARTS-->
        
         <!--END CHARTS-->
