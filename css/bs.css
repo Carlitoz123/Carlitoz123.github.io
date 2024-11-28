@@ -12,7 +12,7 @@ body{
     header{
         background-color:transparent ;
         display:flex;
-        padding-left:75%;
+        padding-left:67%;
        
     }
     .navbar {
@@ -29,6 +29,9 @@ body{
        
         box-shadow: none; /* Opcional: elimina la sombra */
     }
+   
+        
+
     
     .dropdown-item {
         color: #ffffff; 

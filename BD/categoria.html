@@ -28,9 +28,10 @@
             <li class="nav-item mx-3"><a href="./users.html" class="nav-link text-white" style="font-size: 2rem;">
               <i class="bi bi-person"></i>&nbsp;&nbsp;Usuarios</a></li>
               <li class="nav-item mx-3"><a href="./pedidos.html" class="nav-link text-white" style="font-size: 2rem;">
-                <i class="bi bi-credit-card-2-back"></i>&nbsp;&nbsp;Pedidos</a></li>
+                <i class="bi bi-credit-card-2-back"></i></i>&nbsp;&nbsp;Pedidos</a></li>
                 <li class="nav-item mx-3"><a href="./categoria.html" class="nav-link text-white" style="font-size: 2rem;">
                   <i class="bi bi-bookmarks"></i></i>&nbsp;&nbsp;Categoria</a></li>
+              </ul>
           </ul>
     </aside>
     <!--END SIDEBAR-->
@@ -82,32 +83,35 @@
       <!--END HEADER-->
       <!--TITLE SECTION-->
       <div class="d-flex justify-content-between">
-        <h1 class="h4 p-4 text-white">Usuarios</h1>
-        
+        <h1 class="h4 p-4 text-white">Categorias</h1>
       </div>
+      <div class="d-flex justify-content-between">
+        
+        <div id="btn_user">
+          <Button class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#modalAdd" >Agregar</Button>
+        </div>
+      </div>
+      
       <!--END TITLE SECTION-->
 
-      <section class="mt-4 p-4 container-fluid">
+      <section class="mt-4 p-4">
         <table class="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">NOMBRE</th>
-              <th scope="col">APELLIDO</th>
-              <th scope="col">EDAD</th>
-              <th scope="col">EMAIL</th>
-              <th scope="col">CONTRASEÑA</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Descripcion</th>
+
+              
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Carlos</td>
-              <td>Ortiz</td>
-              <td>41</td>
-              <td>carlos@gmail.com</td>
-              <td>************</td>
+              <td>Accesories</td>
+              <td>............................</td>
+              
               <td class="text-end">
                 <button class="btn btn-danger btn-sm">
                   <i class="bi bi-trash3-fill"></i>
@@ -115,9 +119,51 @@
                 <button class="btn btn-warning btn-sm">
                   <i class="bi bi-pen"></i>
                 </button>
-                <button class="btn btn-dark btn-sm">
-                  <i class="bi bi-eye-fill"></i>
+                
+
+              </td>
+
+
+              </button>
+              </td>
+              </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Clothes</td>
+              <td>............................</td>
+              
+              <td class="text-end">
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash3-fill"></i>
                 </button>
+                <button class="btn btn-warning btn-sm">
+                  <i class="bi bi-pen"></i>
+                </button>
+                
+
+              </td>
+
+
+              </button>
+              </td>
+              </button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>tennis</td>
+              <td>............................</td>
+              
+              <td class="text-end">
+                <button class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash3-fill"></i>
+                </button>
+                <button class="btn btn-warning btn-sm">
+                  <i class="bi bi-pen"></i>
+                </button>
+                
 
               </td>
 
