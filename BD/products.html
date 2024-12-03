@@ -143,6 +143,97 @@
 
     </main>
   </div>
+   <!-- Modal -->
+   <div class="modal fade modal-lg" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form action="" class="needs-validation" novalidate id="form">
+          <div class="modal-body">
+
+              <div class="row">
+                <div class="col-6 mb-2">
+                  <label for="">Nombre: </label>
+                  <input required type="text" class="form-control" placeholder="Inserta el Nombre">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+                <div class="col-6 mb-2">
+                  <label for="">Apellido: </label>
+                  <input required type="text" class="form-control" placeholder="Inserta el Apellido">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-4 mb-2">
+                  <label for="">Edad</label>
+                  <input required type="number" class="form-control" placeholder="Ingrese la Edad">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+                <div class="col-4 mb-2">
+                  <label for="">Peso</label>
+                  <input required type="number" class="form-control" placeholder="Ingrese la peso">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+
+
+                <div class="col-4 mb-2">
+                  <label for="">Estatura (cm)</label>
+                  <input required min="1" type="number" class="form-control" placeholder="Ingrese la estatura">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-12 mb-2">
+                  <label for="">Email</label>
+                  <input required type="email" class="form-control" placeholder="Ingresar Email">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6 mb-2">
+                  <label for="Contraseña">Contraseña</label>
+                  <input required type="password" class="form-control" placeholder="Ingrese Contraseña">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+                <div class="col-6 mb-2">
+                  <label for="Contraseña">Confirmar Contraseña</label>
+                  <input required  type="password" class="form-control" placeholder="Confirmar Contraseña">
+                  <div class="valid-feedback">Correcto</div>
+                  <div class="invalid-feedback">Datos necesarios</div>
+                </div>
+
+              </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-dark" id="btnSave">Guardar</button>
+          </div>
+        </form>
+
+    </div>
+  </div>
+  </div>
 
  
 
