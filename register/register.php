@@ -31,10 +31,10 @@
             
                 
                 <!-- no me queda este boton de enlace -->
-               <div class="btn"><button type="submit" class="btnregister" onclick="changeIndex5()" >Register</button></div>
+               <div class="btn"><button type="submit" class="btnregister"  href="../BD/products.php" onclick="changeIndex5()" >Register</button></div>
 
                 <div class="register">
-                    <p>Do you have an account??<a href="#" onclick="changelogin()">Log in</a></p>
+                    <p>Do you have an account??<a href="../login/login.php" >Log in</a></p>
                     
                 </div>
         </form>

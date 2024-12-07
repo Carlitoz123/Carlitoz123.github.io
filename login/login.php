@@ -29,7 +29,7 @@
                <div class="btn"><button type="submit" class="btnlogin" onclick="changeIndex()">Login</button> </div>
 
                 <div class="register">
-                    <p>Don't have an account?<a href="#" onclick="changeRegister()">Register</a></p>
+                    <p>Don't have an account?<a href="../register/register.php" >Register</a></p>
                     
                 </div>
         </form>
