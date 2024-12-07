@@ -1,14 +1,14 @@
 function changelogin(){
-    window.location.href='/login/login.html'
+    window.location.href='../login.php'
 }
 function changeIndex(){
-    window.location.href='/BD/products.html'
+    window.location.href='./BD/products.php'
 }
 function changeIndex5(){
-    window.location.href='/index.html'
+    window.location.href='./index.php'
 }
 function changeRegister(){
-    window.location.href='/register/register.html'
+    window.location.href='./register/register.php'
 }
 
 

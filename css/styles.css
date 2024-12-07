@@ -6,7 +6,7 @@
 body{
     height:100vh;
     font-family: Arial, sans-serif;
-    background-image: url('./img/fondo.webp');
+    background-image: url('../css/img/fondo.webp');
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
