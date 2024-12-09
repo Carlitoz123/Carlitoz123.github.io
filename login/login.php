@@ -3,7 +3,12 @@ if(isset($_GET['error'])){
   $error = $_GET['error'];
 }
 ?>
-
+<?php 
+    include "../php/conexion.php";
+    $sql="select * from users order by id DESC";
+    $res= $conexion->query($sql) or die($conexion->error);
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +21,14 @@ if(isset($_GET['error'])){
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form action="../php/login.php" method="post">
             <h1>Login</h1>
             <div class="user">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" name="nombre" required>
                 <i class="fa-regular fa-user"></i>
             </div>
             <div class="user">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="contra" required>
                 <i class="fa-solid fa-lock"></i>
             </div>
             
@@ -41,11 +46,17 @@ if(isset($_GET['error'])){
         </form>
 
     </div>
-    <?php
-    if(isset($error)){
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php 
+        if(isset($_GET['error'])){
     ?>
-
-   
-<?php } ?>
+                <script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Datos no validos",
+                    });
+                </script>
+    <?php  } ?>
 </body>
 </html>

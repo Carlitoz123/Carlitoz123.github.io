@@ -1,3 +1,9 @@
+<?php session_start();
+    if(!isset($_SESSION['user_data'])){
+        header("Location: ../login.php");
+    }
+    $user_data = $_SESSION['user_data'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 

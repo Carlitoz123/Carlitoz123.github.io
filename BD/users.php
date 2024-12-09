@@ -1,9 +1,9 @@
 <?php session_start();
-if(isset($_SESSION['userdata'])){
-  $user=$_SESSION['userdata'];
-}else{
-  header('Location: ./login.php');
-}
+    if(!isset($_SESSION['user_data'])){
+        header("Location: ../login.php");
+    }
+    $user_data = $_SESSION['user_data'];
+?>
 
 $title="Gestion de Usuarios";
 
