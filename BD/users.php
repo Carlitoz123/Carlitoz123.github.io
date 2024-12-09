@@ -1,4 +1,18 @@
+<?php session_start();
+if(isset($_SESSION['userdata'])){
+  $user=$_SESSION['userdata'];
+}else{
+  header('Location: ./login.php');
+}
 
+$title="Gestion de Usuarios";
+
+?>
+<?php
+  include "./php/conexion.php";
+  $sql="select * from users order by user_id DESC";
+  $res=$conexion->query($sql)or die($conexion->error);
+?>
 
 <!DOCTYPE html>
 <html lang="es">

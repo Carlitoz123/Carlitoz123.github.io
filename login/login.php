@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET['error'])){
+  $error = $_GET['error'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +32,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
                 <!-- no me queda este boton de enlace -->
-               <div class="btn"><button type="submit" class="btnlogin" onclick="changeIndex()">Login</button> </div>
+               <div class="btn"><button type="submit" class="btnlogin" href="">Login</button> </div>
 
                 <div class="register">
                     <p>Don't have an account?<a href="../register/register.php" >Register</a></p>
@@ -35,8 +41,11 @@
         </form>
 
     </div>
+    <?php
+    if(isset($error)){
+    ?>
 
    
-    
+<?php } ?>
 </body>
 </html>
