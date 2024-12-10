@@ -122,13 +122,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <form action="" class="needs-validation" novalidate id="form">
+        <form action="../php/agregar.php"  method="post" class="needs-validation" novalidate id="form">
           <div class="modal-body">
 
               <div class="row">
                 <div class="col-12 mb-2">
                   <label for="">Nombre: </label>
-                  <input required type="text" class="form-control" placeholder="Inserta Nombre de Proveedor">
+                  <input required type="text" class="form-control" placeholder="Inserta Nombre de Proveedor" name="prov" maxlength="50">
+
                   <div class="valid-feedback">Correcto</div>
                   <div class="invalid-feedback">Datos necesarios</div>
                 </div>
@@ -139,7 +140,7 @@
 
                 <div class="col-12 ">
                   <label for="">Correo electronico</label>
-                  <input required type="text" class="form-control" placeholder="Ingrese correo electronico">
+                  <input required type="email" class="form-control" placeholder="Ingrese correo electrónico" name="email">
                   <div class="valid-feedback">Correcto</div>
                   <div class="invalid-feedback">Datos necesarios</div>
                 </div>
@@ -148,7 +149,7 @@
 
                   <div class="col-12 ">
                     <label for="">Direccion</label>
-                    <input required type="text" class="form-control" placeholder="Ingrese Direccion">
+                    <input required type="text" class="form-control" placeholder="Ingrese Direccion" name="dire">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Datos necesarios</div>
                   </div>
@@ -156,7 +157,7 @@
                   <div class="row">
                     <div class="col-12 mb-2">
                       <label for="">Telefono: </label>
-                      <input required type="text" class="form-control" placeholder="Inserta telefono">
+                      <input required type="tel" class="form-control" placeholder="Inserta teléfono" name="telefono" pattern="\d{10}">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Datos necesarios</div>
                     </div>
@@ -170,8 +171,8 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-dark" id="btnSave">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Usuario</button>
           </div>
         </form>
 
@@ -188,10 +189,12 @@
         var idEliminar = -1;
         var fila;
         $(".btnEliminar").click(function(){
-          idEliminar=$(this).data('id_proveedor');
+          idEliminar=$(this).data('id');
           fila=$(this).parent('td').parent('tr');
         });
         $(".eliminar").click(function(){
+          console.log(idEliminar);
+          
           $.ajax({
             url:'../php/eliminar.php',
             method:'POST',
@@ -201,12 +204,34 @@
               columna:'id_proveedor'
             }
           }).done(function(res){
+            console.log(res)
             $(fila).fadeOut(500);
           });
           
         });
       });
     </script>
+    <?php
+    if ($stmt->execute()) {
+    echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: 'Proveedor agregado con éxito',
+        }).then(() => {
+            window.location.href = '../ruta_donde_volver.php';
+        });
+    </script>";
+} else {
+    echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '" . $stmt->error . "',
+        });
+    </script>";
+}
+?>
 </body>
 
 </html>
