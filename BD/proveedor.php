@@ -3,6 +3,12 @@
         header("Location: ../login.php");
     }
     $user_data = $_SESSION['user_data'];
+   
+?>
+<?php
+  include "../php/conexion.php";
+  $sql="select * from proveedor order by id_proveedor DESC";
+  $res=$conexion->query($sql)or die($conexion->error);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,7 +16,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/bs.css">
+  <link rel="stylesheet" href="../css/bs.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -21,73 +27,12 @@
 <body>
   <div class="d-flex">
     <!--SIDEBAR-->
-    
-    <aside class=" text-white vh-100" style="width: 20%;" id="barra">
-      <h2 class="p-4 pb-25 h4" style="font-size: 3rem;" >
-      <img width="50px" src="" alt="" class="mx-1" >
-      RAVINE
-    </h2>
-          <ul class="nav flex-column">
-            
-            <li class="nav-item mx-3"><a href="products.html" class="nav-link text-white" style="font-size: 1.9rem;">
-              <i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Inventario</a></li>
-            <li class="nav-item mx-3"><a href="./users.html" class="nav-link text-white" style="font-size: 2rem;">
-              <i class="bi bi-person"></i>&nbsp;&nbsp;Usuarios</a></li>
-              <li class="nav-item mx-3"><a href="./pedidos.html" class="nav-link text-white" style="font-size: 2rem;">
-                <i class="bi bi-credit-card-2-back"></i></i>&nbsp;&nbsp;Pedidos</a></li>
-                <li class="nav-item mx-3"><a href="./categoria.html" class="nav-link text-white" style="font-size: 2rem;">
-                  <i class="bi bi-bookmarks"></i></i>&nbsp;&nbsp;Categoria</a></li>
-                  <li class="nav-item mx-3"><a href="./proveedor.html" class="nav-link text-white" style="font-size: 2rem;">
-                    <i class="bi bi-bookmarks"></i></i>&nbsp;&nbsp;Proveedor</a></li>
-              </ul>
-          </ul>
-    </aside>
+    <?php include "../layouts/aside.php"
+    ?>
     <!--END SIDEBAR-->
     <main class="flex-grow-1">
       <!--HEADER-->
-      <header>
-        <nav class="px-4 py-4 navbar navbar-expand-lg ">
-          <div class="container-fluid">
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end px-5" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item mx-4">
-                  <button type="button" class="btn btn-light position-relative" id="campana">
-                    <i class="bi bi-bell"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      5+
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <img style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgb(13, 106, 13);"
-                    src="./img/taco.jpg">
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active text-white" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Admin
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Perfil</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="/index.html"><i class="bi bi-box-arrow-left"></i>&nbsp;&nbsp;LogOut</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <?php include "../layouts/header.php"?>
       <!--END HEADER-->
       <!--TITLE SECTION-->
       <div class="d-flex justify-content-between">
@@ -117,86 +62,57 @@
             </tr>
           </thead>
           <tbody>
+          <?php
+                    while($fila=mysqli_fetch_array($res)){
+                  ?>
             <tr>
-              <td>1</td>
-              <td>EcoStep Solutions</td>
-              <td>................</td>
-              <td>contact@ecostepsolutions.com</td>
-              <td>(636) 123-4567</td>
+              <td> <?php echo $fila['id_proveedor'] ?> </td>
+              <td><?php echo $fila['nombre'] ?></td>
+              <td><?php echo $fila['email'] ?></td>
+              <td><?php echo $fila['direccion'] ?></td>
+              <td><?php echo $fila['telefono'] ?></td>
               
               <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
+              <button class="btn btn-sm btn-danger btnEliminar"
+          data-id="<?php echo $fila['id_proveedor']; ?>"
+          data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+      <i class="bi bi-trash"></i> Eliminar
+  </button>
                 <button class="btn btn-warning btn-sm">
                   <i class="bi bi-pen"></i>
                 </button>
                 
-
-              </td>
-
-
-              </button>
-              </td>
-              </button>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Dynamic Kicks Supply</td>
-              <td>............................</td>
-              <td>support@dynamickicks.com</td>
-              <td>(636) 234-5678</td>
-              
-              <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
-                </button>
-                
+            <?php
+                    }
+                  ?>
 
-              </td>
-
-
-              </button>
-              </td>
-              </button>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>FlexFoot Distribution</td>
-              <td>............................</td>
-              <td>sales@flexfootdistribution.com</td>
-              <td>(636) 345-6789</td>
-              
-              <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
-                </button>
-                
-
-              </td>
-
-
-              </button>
-              </td>
-              </button>
-              </td>
-            </tr>
           </tbody>
         </table>
       </section>
 
 
+      
     </main>
   </div>
-
+  <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteUserModalLabel">Confirmar Eliminación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              ¿Estás seguro de que deseas eliminar a este registro? Esta acción no se puede deshacer.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger eliminar" data-bs-dismiss="modal">Eliminar</button>
+          </div>
+      </div>
+  </div>
+</div>
   <!-- Modal -->
   <div class="modal fade modal-lg" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -266,7 +182,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="./js basededatos/users.js"> </script>
-  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var idEliminar = -1;
+        var fila;
+        $(".btnEliminar").click(function(){
+          idEliminar=$(this).data('id_proveedor');
+          fila=$(this).parent('td').parent('tr');
+        });
+        $(".eliminar").click(function(){
+          $.ajax({
+            url:'../php/eliminar.php',
+            method:'POST',
+            data:{
+              id:idEliminar,
+              tabla:'proveedor',
+              columna:'id_proveedor'
+            }
+          }).done(function(res){
+            $(fila).fadeOut(500);
+          });
+          
+        });
+      });
+    </script>
 </body>
 
 </html>

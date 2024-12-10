@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/bs.css">
+  <link rel="stylesheet" href="../css/bs.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -21,73 +21,12 @@
 <body>
   <div class="d-flex">
     <!--SIDEBAR-->
-    
-    <aside class=" text-white vh-100" style="width: 20%;" id="barra">
-      <h2 class="p-4 pb-25 h4" style="font-size: 3rem;" >
-      <img width="50px" src="" alt="" class="mx-1" >
-      RAVINE
-    </h2>
-          <ul class="nav flex-column">
-            
-            <li class="nav-item mx-3"><a href="products.html" class="nav-link text-white" style="font-size: 1.9rem;">
-              <i class="bi bi-egg-fried"></i>&nbsp;&nbsp;Inventario</a></li>
-            <li class="nav-item mx-3"><a href="./users.html" class="nav-link text-white" style="font-size: 2rem;">
-              <i class="bi bi-person"></i>&nbsp;&nbsp;Usuarios</a></li>
-              <li class="nav-item mx-3"><a href="./pedidos.html" class="nav-link text-white" style="font-size: 2rem;">
-                <i class="bi bi-credit-card-2-back"></i></i>&nbsp;&nbsp;Pedidos</a></li>
-                <li class="nav-item mx-3"><a href="./categoria.html" class="nav-link text-white" style="font-size: 2rem;">
-                  <i class="bi bi-bookmarks"></i></i>&nbsp;&nbsp;Categoria</a></li>
-                  <li class="nav-item mx-3"><a href="./proveedor.html" class="nav-link text-white" style="font-size: 2rem;">
-                    <i class="bi bi-bookmarks"></i></i>&nbsp;&nbsp;Proveedor</a></li>
-              </ul>
-          </ul>
-    </aside>
+    <?php include "../layouts/aside.php"
+    ?>
     <!--END SIDEBAR-->
     <main class="flex-grow-1">
       <!--HEADER-->
-      <header>
-        <nav class="px-4 py-4 navbar navbar-expand-lg ">
-          <div class="container-fluid">
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end px-5" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item mx-4">
-                  <button type="button" class="btn btn-light position-relative" id="campana">
-                    <i class="bi bi-bell"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      5+
-                      <span class="visually-hidden">unread messages</span>
-                    </span>
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <img style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgb(13, 106, 13);"
-                    src="./img/taco.jpg">
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active text-white" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Admin
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Perfil</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="/index.html"><i class="bi bi-box-arrow-left"></i>&nbsp;&nbsp;LogOut</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <?php include "../layouts/header.php"?>
       <!--END HEADER-->
       <!--TITLE SECTION-->
       <div class="d-flex justify-content-between">
