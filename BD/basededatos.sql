@@ -18,6 +18,7 @@ create table users(
 select * from users;
 
 insert into users values (0,'Carlitos','admin@gmail.com','123','default.jpg',1,'6361310420','Calle rio #120');
+insert into users values (0,'Sebastian','user@gmail.com','123','default.jpg',0,'6361200312','Calle bravo #142');
 
 
 

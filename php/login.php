@@ -31,7 +31,7 @@
         if($fila[5]==1){
          header("Location: ../BD/products.php");
         }else{
-          header("Location: ./index.html");
+          header("Location: ../index.php");
         }
 
     }else{
