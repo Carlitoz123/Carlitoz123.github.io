@@ -4,6 +4,11 @@
     }
     $user_data = $_SESSION['user_data'];
 ?>
+<?php
+  include "../php/conexion.php";
+  $sql="select * from categoria order by id_categoria DESC";
+  $res=$conexion->query($sql)or die($conexion->error);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -54,81 +59,64 @@
             </tr>
           </thead>
           <tbody>
+           
+          <?php
+                    while($fila=mysqli_fetch_array($res)){
+                  ?>
             <tr>
-              <td>1</td>
-              <td>Accesories</td>
-              <td>............................</td>
+              <td> <?php echo $fila['id_categoria'] ?> </td>
+              <td><?php echo $fila['nombre'] ?></td>
+              <td><?php echo $fila['descripcion'] ?></td>
+             
               
               <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
-                </button>
-                
+              <button class="btn btn-sm btn-danger btnEliminar"
+          data-id="<?php echo $fila['id_categoria']; ?>"
+          data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+      <i class="bi bi-trash"></i> Eliminar
+  </button>
+                <button class="btn btn-warning btn-sm btnedit" data-id=<?php echo $fila['id_categoria'];?>
+                  data-nombre=<?php echo $fila['nombre'];?>
+                  data-desc=<?php echo $fila['descripcion'];?>
+                  data-bs-toggle="modal" data-bs-target="#EditModal"
 
-              </td>
-
-
-              </button>
-              </td>
-              </button>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Clothes</td>
-              <td>............................</td>
-              
-              <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
+                  >
+                  
+                  <i class="bi bi-pen">Editar</i>
                 </button>
                 
-
-              </td>
-
-
-              </button>
-              </td>
-              </button>
               </td>
             </tr>
-            <tr>
-              <td>3</td>
-              <td>tennis</td>
-              <td>............................</td>
-              
-              <td class="text-end">
-                <button class="btn btn-danger btn-sm">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
-                </button>
-                
-
-              </td>
-
-
-              </button>
-              </td>
-              </button>
-              </td>
-            </tr>
+            <?php
+                    }
+                  ?>
+            
           </tbody>
         </table>
       </section>
 
+      <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="deleteUserModalLabel">Confirmar Eliminación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              ¿Estás seguro de que deseas eliminar a este registro? Esta acción no se puede deshacer.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger eliminar" data-bs-dismiss="modal">Eliminar</button>
+          </div>
+      </div>
+  </div>
 
     </main>
   </div>
+  
 
-  <!-- Modal -->
+  <!-- Modal  Agregar-->
   <div class="modal fade modal-lg" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -137,41 +125,72 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <form action="" class="needs-validation" novalidate id="form">
-          <div class="modal-body">
+        <form action="../php/agregarcategoria.php" method="post" class="needs-validation" novalidate id="form">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6 mb-2">
+                <label for="name">Nombre: </label>
+                <input required type="text" class="form-control" placeholder="Inserta Nombre de Categoria" name="name" id="name">
+                <div class="valid-feedback">Correcto</div>
+                <div class="invalid-feedback">Datos necesarios</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <label for="descripcion">Descripción:</label>
+                <input required type="text" class="form-control" placeholder="Ingrese la descripción de la categoría" name="descripcion" id="descripcion">
+                <div class="valid-feedback">Correcto</div>
+                <div class="invalid-feedback">Datos necesarios</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-dark" id="btnSave">Guardar</button>
+    </div>
+</form>
 
-              <div class="row">
-                <div class="col-6 mb-2">
-                  <label for="">Nombre: </label>
-                  <input required type="text" class="form-control" placeholder="Inserta Nombre de Categoria">
-                  <div class="valid-feedback">Correcto</div>
-                  <div class="invalid-feedback">Datos necesarios</div>
-                </div>
-                
-              </div>
-
-              <div class="row">
-
-                <div class="col-20 ">
-                  <label for="">Descripcion</label>
-                  <input required type="text" class="form-control" placeholder="Ingrese la descripcion de la categoria">
-                  <div class="valid-feedback">Correcto</div>
-                  <div class="invalid-feedback">Datos necesarios</div>
-                </div>
-                </div>
-
-              
-
-              
+    </div>
+  </div>
+  </div>
 
 
+  <!-- Modal  Editar-->
+  <div class="modal fade modal-lg" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="EditModalLabel">Agregar Categoria</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-dark" id="btnSave">Guardar</button>
-          </div>
-        </form>
+        <form action="../php/agregarcategoria.php" method="post" class="needs-validation" novalidate id="form">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6 mb-2">
+                <!-- Campo oculto para el ID del usuario -->
+                <input type="hidden" class="form-control" name="editid" id="userid">
+                <label for="editname">Nombre:</label>
+                <input required type="text" class="form-control" placeholder="Inserta Nombre de Categoria" name="name" id="editname">
+                <div class="valid-feedback">Correcto</div>
+                <div class="invalid-feedback">Datos necesarios</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <label for="editdesc">Descripción:</label>
+                <input required type="text" class="form-control" placeholder="Ingrese la descripción de la categoría" name="descripcion" id="editdesc">
+                <div class="valid-feedback">Correcto</div>
+                <div class="invalid-feedback">Datos necesarios</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-dark" id="btnSave">Guardar</button>
+    </div>
+</form>
+
 
     </div>
   </div>
@@ -180,7 +199,58 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="./js basededatos/users.js"> </script>
-  
+    <script src="../BD/js basededatos/categoria.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var idEliminar = -1;
+        var fila;
+        $(".btnEliminar").click(function(){
+          idEliminar=$(this).data('id');
+          fila=$(this).parent('td').parent('tr');
+        });
+        $(".eliminar").click(function(){
+          console.log(idEliminar);
+          
+          $.ajax({
+            url:'../php/eliminar.php',
+            method:'POST',
+            data:{
+              id:idEliminar,
+              tabla:'categoria',
+              columna:'id_categoria'
+            }
+          }).done(function(res){
+            console.log(res)
+            $(fila).fadeOut(200);
+          });
+          
+        });
+      });
+      </script>
+      <script>
+    <?php
+   if ($stmt->execute()) {
+    echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'Categoría agregada con éxito',
+        }).then(() => {
+            window.location.href = '../BD/categoria.php';
+        });
+    </script>";
+} else {
+    echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '" . $stmt->error . "',
+        });
+    </script>";
+}
+?>
+</script>
 </body>
 
 </html>

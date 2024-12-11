@@ -42,6 +42,7 @@ descripcion varchar(100),
 primary key (id_categoria)
 )
 
+insert into categoria values (0,'T-shirt','100% algodon');
 
 
 
