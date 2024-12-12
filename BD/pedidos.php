@@ -4,6 +4,11 @@
     }
     $user_data = $_SESSION['user_data'];
 ?>
+<?php
+  include "../php/conexion.php";
+  $sql="select * from pedidos order by id_pedido DESC";
+  $res=$conexion->query($sql)or die($conexion->error);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -78,7 +83,6 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">ID USUARIO</th>
-              <th scope="col">USUARIO</th>
               <th scope="col">PRODUCTOS</th>
               <th scope="col">FECHA DE COMPRA</th>
               <th scope="col">TOTAL DE COMPRA</th>
@@ -87,31 +91,40 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>Carlos</td>
-              <td>Jean,T-shirt</td>
-              <td>22/11/2024</td>
-              <td>$350.00</td>
-              <td>En transito......</td>
-              <td class="text-end">
-                
-                <button class="btn btn-warning btn-sm">
-                  <i class="bi bi-pen"></i>
-                </button>
-                <button class="btn btn-dark btn-sm">
-                  <i class="bi bi-eye-fill"></i>
-                </button>
+          <?php
+while ($fila = mysqli_fetch_array($res)) {
+?>
+<tr>
+    <td> <?php echo $fila['id_pedido']; ?> </td>
+    <td><?php echo $fila['usuario_id']; ?></td>
+    <td><?php echo $fila['productos']; ?></td>
+    <td><?php echo $fila['fecha']; ?></td>
+    <td><?php echo $fila['total']; ?></td>
+    <td><?php echo $fila['estado']; ?></td>
+    <td class="text-end">
+        <!-- Botón Eliminar -->
+        <button class="btn btn-sm btn-danger btnEliminar"
+                data-id="<?php echo $fila['id_pedido']; ?>"
+                data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+            <i class="bi bi-trash"></i> Eliminar
+        </button>
+        <!-- Botón Editar -->
+        <button class="btn btn-warning btn-sm btnEdit"
+                data-id="<?php echo $fila['id_pedido']; ?>"
+                data-usuario-id="<?php echo $fila['usuario_id']; ?>"
+                data-productos="<?php echo $fila['productos']; ?>"
+                data-fecha="<?php echo $fila['fecha']; ?>"
+                data-total="<?php echo $fila['total']; ?>"
+                data-estado="<?php echo $fila['estado']; ?>"
+                data-bs-toggle="modal" data-bs-target="#editModal">
+            <i class="bi bi-pen"></i> Editar
+        </button>
+    </td>
+</tr>
+<?php
+}
+?>
 
-              </td>
-
-
-              </button>
-              </td>
-              </button>
-              </td>
-            </tr>
           </tbody>
         </table>
       </section>
